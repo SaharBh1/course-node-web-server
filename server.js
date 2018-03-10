@@ -34,12 +34,18 @@ app.get('/about',(req,res)=>{
 		welcomeMessage:'welcome to my page'
 	})
 })
-app.get('/home',(req,res)=>{
+app.get('/',(req,res)=>{
 	res.render('home.hbs',{
 		pageTitle:'home',
 	welcomeMessage:'welcome to my home'
 	})
 	
+})
+app.get('/project',(req,res)=>{
+	res.render('project.hbs',{
+		pageTitle:'projects'
+
+	})
 })
 
 app.listen(port,()=>{
