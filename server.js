@@ -2,6 +2,7 @@ const express=require('express')
 const hbs=require('hbs')
 const fs=require('fs')
 var app=express()
+const port=process.env.PORT ||3000
 app.use(express.static(__dirname+'/public'))
 
 app.use((req,res,next)=>{
@@ -41,4 +42,6 @@ app.get('/home',(req,res)=>{
 	
 })
 
-app.listen(3000)
+app.listen(port,()=>{
+	console.log(`server is up on port${port}`)
+})
